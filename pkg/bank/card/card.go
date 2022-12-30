@@ -1,6 +1,6 @@
 package card
 
-import "bank/pkg/bank/types"
+import "github.com/adheeeem/bank.git/pkg/bank/types"
 
 func Withdraw(card *types.Card, amount types.Money) {
 	if card.Active && amount <= card.Balance && amount > 0 && amount <= 20_000_00 {
@@ -26,8 +26,7 @@ func Total(cards []types.Card) types.Money {
 	}
 	return total
 }
-func PaymentSources(cards []types.Card) []types.PaymentSource {
-	var sources []types.PaymentSource
+func PaymentSources(cards []types.Card) (sources []types.PaymentSource) {
 	for _, card := range cards {
 		if card.Active && card.Balance > 0 {
 			cd := types.PaymentSource{
@@ -38,5 +37,5 @@ func PaymentSources(cards []types.Card) []types.PaymentSource {
 			sources = append(sources, cd)
 		}
 	}
-	return sources
+	return
 }

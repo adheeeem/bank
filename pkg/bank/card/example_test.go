@@ -1,8 +1,8 @@
 package card
 
 import (
-	"bank/pkg/bank/types"
 	"fmt"
+	"github.com/adheeeem/bank.git/pkg/bank/types"
 )
 
 func ExampleTotal() {
@@ -22,4 +22,33 @@ func ExampleTotal() {
 	}
 	fmt.Println(Total(cards))
 	// Output: 25000
+}
+func ExamplePaymentSources() {
+	cards := []types.Card{
+		{
+			Name:    "card",
+			PAN:     "5058 xxxx xxxx 9999",
+			Active:  true,
+			Balance: 10_000,
+		},
+		{
+			Name:    "another_card",
+			PAN:     "5058 xxxx xxxx 2998",
+			Active:  true,
+			Balance: 50_550,
+		},
+		{
+			Name:    "visa",
+			PAN:     "4058 xxxx xxxx 5555",
+			Active:  true,
+			Balance: 0,
+		},
+	}
+	result := PaymentSources(cards)
+	for _, source := range result {
+		fmt.Println(source.Number)
+	}
+	// Output:
+	// 5058 xxxx xxxx 9999
+	// 5058 xxxx xxxx 2998
 }
