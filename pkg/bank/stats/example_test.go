@@ -8,16 +8,19 @@ import (
 func ExampleAvg() {
 	payments := []types.Payment{
 		{
-			ID:     1,
-			Amount: 50_00,
+			ID:       1,
+			Amount:   50_00,
+			Category: "korti milli",
 		},
 		{
-			ID:     2,
-			Amount: 10_000,
+			ID:       2,
+			Amount:   10_000,
+			Category: "visa",
 		},
 		{
-			ID:     3,
-			Amount: 35_00,
+			ID:       3,
+			Amount:   35_00,
+			Category: "visa",
 		},
 	}
 	result := Avg(payments)
