@@ -4,6 +4,8 @@ type Money int64
 
 type Currency string
 
+type Category string
+
 const (
 	TJS Currency = "TJS"
 	RUB Currency = "RUB"
@@ -22,8 +24,9 @@ type Card struct {
 	MinBalance Money
 }
 type Payment struct {
-	ID     int
-	Amount Money
+	ID       int
+	Amount   Money
+	Category Category
 }
 type PaymentSource struct {
 	Type    string
