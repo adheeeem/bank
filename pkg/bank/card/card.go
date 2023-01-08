@@ -1,6 +1,6 @@
 package card
 
-import "github.com/adheeeem/bank.git/pkg/bank/types"
+import "github.com/adheeeem/bank/pkg/bank/types"
 
 func Withdraw(card *types.Card, amount types.Money) {
 	if card.Active && amount <= card.Balance && amount > 0 && amount <= 20_000_00 {

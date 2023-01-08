@@ -1,3 +1,3 @@
-module github.com/adheeeem/bank.git
+module github.com/adheeeem/bank
 
 go 1.19

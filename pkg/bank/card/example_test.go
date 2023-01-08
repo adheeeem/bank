@@ -2,7 +2,7 @@ package card
 
 import (
 	"fmt"
-	"github.com/adheeeem/bank.git/pkg/bank/types"
+	"github.com/adheeeem/bank/pkg/bank/types"
 )
 
 func ExampleTotal() {
