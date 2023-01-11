@@ -6,6 +6,14 @@ type Currency string
 
 type Category string
 
+type Status string
+
+const (
+	StatusOk         Status = "OK"
+	StatusFail       Status = "FAIL"
+	StatusInProgress Status = "INPROGRESS"
+)
+
 const (
 	TJS Currency = "TJS"
 	RUB Currency = "RUB"
@@ -27,6 +35,7 @@ type Payment struct {
 	ID       int
 	Amount   Money
 	Category Category
+	Status   Status
 }
 type PaymentSource struct {
 	Type    string
